@@ -677,6 +677,7 @@ module Facebooker
         hash[:api_key] = @api_key
         hash[:call_id] = Time.now.to_f.to_s unless method == 'facebook.auth.getSession'
         hash[:v] = "1.0"
+		hash[:session_key] = @session_key if @session_key
       end
 
       # This ultimately delgates to the adapter
